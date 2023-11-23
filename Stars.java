@@ -19,6 +19,8 @@ public class Stars extends World
         super(600, 400, 1); 
         Elephant tanav = new Elephant();
         addObject(tanav,50,100);
+        Ricky ricky = new Ricky();
+        addObject(ricky,75,80);
         
     }
 }
