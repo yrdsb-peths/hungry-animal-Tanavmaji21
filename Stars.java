@@ -19,6 +19,14 @@ public class Stars extends World
         super(600, 400, 1); 
         Elephant tanav = new Elephant();
         addObject(tanav,50,100);
-        
+
+        prepare();
+    }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
     }
 }
