@@ -23,6 +23,8 @@ public class Stars extends World
         addObject(myPizza,200,300);
         Burger myBurger = new Burger();
         addObject(myBurger,400,200);
+        Pumpkin myPumpkin = new Pumpkin();
+        addObject(myPumpkin,450,350);
        
     }
 }
