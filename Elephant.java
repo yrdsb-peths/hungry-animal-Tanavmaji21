@@ -37,6 +37,7 @@ public class Elephant extends Actor
         myPizza = getOneObjectAtOffset(0,0, Pizza.class);
         if (myPizza != null)
         {
+            
             World world;
             world = getWorld();
             world.removeObject(myPizza);
