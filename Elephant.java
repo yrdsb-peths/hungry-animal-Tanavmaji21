@@ -38,27 +38,30 @@ public class Elephant extends Actor
         if (myPizza != null)
         {
             
-            World world;
-            world = getWorld();
+            Stars world;
+            world = (Stars)getWorld();
             world.removeObject(myPizza);
+            world.increaseScore();
         }
         
         Actor myBurger;
         myBurger = getOneObjectAtOffset(0,0, Burger.class);
         if (myBurger != null)
         {
-            World world;
-            world = getWorld();
+            Stars world;
+            world = (Stars)getWorld();
             world.removeObject(myBurger);
+            world.increaseScore();
         }
         
         Actor myPumpkin;
         myPumpkin = getOneObjectAtOffset(0,0, Pumpkin.class);
         if (myPumpkin != null)
         {
-            World world;
-            world = getWorld();
+            Stars world;
+            world = (Stars)getWorld();
             world.removeObject(myPumpkin);
+            world.increaseScore();
         }
     }
 }

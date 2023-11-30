@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Stars extends World
 {
-
+    public int score = 0;
+    Label countLabel;
     /**
      * Constructor for objects of class Stars.
      * 
@@ -17,6 +18,8 @@ public class Stars extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
+        Label countLabel = new Label(0,30);
+        addObject(countLabel, 550,20);
         Elephant tanav = new Elephant();
         addObject(tanav,50,50);
         Pizza myPizza = new Pizza();
@@ -26,5 +29,11 @@ public class Stars extends World
         Pumpkin myPumpkin = new Pumpkin();
         addObject(myPumpkin,450,350);
        
+    }
+    
+    public void increaseScore()
+    {
+        score++;
+        countLabel.setValue(score);
     }
 }
