@@ -17,12 +17,12 @@ public class Stars extends World
     public Stars()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        super(600, 400, 1, false);
         
         Elephant tanav = new Elephant();
         addObject(tanav,50,50);
         
-        Label scoreLabel = new Label(0,70);
+        scoreLabel = new Label(0,70);
         addObject(scoreLabel, 550,30);
         
         createPizza();

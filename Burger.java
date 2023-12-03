@@ -19,5 +19,10 @@ public class Burger extends Actor
         setLocation(x, y);
         
         Stars world = (Stars) getWorld();
+        if(getY() >= world.getHeight())
+        {
+            world.gameOver();
+            world.removeObject(this);
+        }
     }
 }
