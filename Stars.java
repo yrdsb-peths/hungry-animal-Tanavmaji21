@@ -47,7 +47,7 @@ public class Stars extends World
     {
        Pizza pizza = new Pizza();
        int x = Greenfoot.getRandomNumber(600);
-       int y = Greenfoot.getRandomNumber(0);
+       int y = 0;
        addObject(pizza, x, y);
        
     }
@@ -56,7 +56,7 @@ public class Stars extends World
     {
         Burger burger = new Burger();
         int x = Greenfoot.getRandomNumber(600);
-        int y = Greenfoot.getRandomNumber(0);
+        int y = 0;
         addObject(burger, x, y);
     }
     
@@ -64,7 +64,7 @@ public class Stars extends World
     {
         Pumpkin pumpkin = new Pumpkin();
         int x = Greenfoot.getRandomNumber(600);
-        int y = Greenfoot.getRandomNumber(0);
+        int y = 0;
         addObject(pumpkin, x, y);
     }
     
