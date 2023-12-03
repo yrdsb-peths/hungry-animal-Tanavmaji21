@@ -22,12 +22,9 @@ public class Stars extends World
         addObject(countLabel, 550,20);
         Elephant tanav = new Elephant();
         addObject(tanav,50,50);
-        Pizza myPizza = new Pizza();
-        addObject(myPizza,200,300);
-        Burger myBurger = new Burger();
-        addObject(myBurger,400,200);
-        Pumpkin myPumpkin = new Pumpkin();
-        addObject(myPumpkin,450,350);
+        createPizza();
+        createPumpkin();
+        createBurger();
        
     }
     
@@ -36,4 +33,32 @@ public class Stars extends World
         score++;
         countLabel.setValue(score);
     }
+    
+    public void createPizza()
+    {
+       Pizza pizza = new Pizza();
+       int x = Greenfoot.getRandomNumber(500);
+       int y = Greenfoot.getRandomNumber(0);
+       addObject(pizza, x, y);
+       
+    }
+    
+    public void createBurger()
+    {
+        Burger burger = new Burger();
+        int x = Greenfoot.getRandomNumber(600);
+        int y = Greenfoot.getRandomNumber(0);
+        addObject(burger, x, y);
+    }
+    
+    public void createPumpkin()
+    {
+        Pumpkin pumpkin = new Pumpkin();
+        int x = Greenfoot.getRandomNumber(600);
+        int y = Greenfoot.getRandomNumber(0);
+        addObject(pumpkin, x, y);
+    }
+    
+    
+    
 }
