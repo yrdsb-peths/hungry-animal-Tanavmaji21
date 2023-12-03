@@ -33,9 +33,36 @@ public class Elephant extends Actor
             turn(2);
         }
         
-        removeTouching(Pizza.class);
-        removeTouching(Burger.class);
-        removeTouching(Pumpkin.class);
+        eat();
         
+    }
+    
+    public void eat()
+    {
+        if(isTouching(Pizza.class))
+        {
+            removeTouching(Pizza.class);
+            Stars world = (Stars) getWorld();
+            world.createPizza();
+            world.increaseScore();
+        }
+        
+        if(isTouching(Burger.class))
+        {
+            removeTouching(Burger.class);
+            Stars world = (Stars) getWorld();
+            world.createBurger();
+            world.increaseScore();
+        }
+        
+        if(isTouching(Pumpkin.class))
+        {
+            removeTouching(Pumpkin.class);
+            Stars world = (Stars) getWorld();
+            world.createPumpkin();
+            world.increaseScore();
+        }
+        
+    
     }
 }
