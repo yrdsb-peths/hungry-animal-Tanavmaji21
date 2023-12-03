@@ -33,35 +33,36 @@ public class Elephant extends Actor
             turn(2);
         }
         
-        Actor myPizza;
-        myPizza = getOneObjectAtOffset(0,0, Pizza.class);
-        if (myPizza != null)
+        eat();
+        
+    }
+    
+    public void eat()
+    {
+        if(isTouching(Pizza.class))
         {
-            
-            Stars world;
-            world = (Stars)getWorld();
-            world.removeObject(myPizza);
+            removeTouching(Pizza.class);
+            Stars world = (Stars) getWorld();
+            world.createPizza();
             world.increaseScore();
         }
         
-        Actor myBurger;
-        myBurger = getOneObjectAtOffset(0,0, Burger.class);
-        if (myBurger != null)
+        if(isTouching(Burger.class))
         {
-            Stars world;
-            world = (Stars)getWorld();
-            world.removeObject(myBurger);
+            removeTouching(Burger.class);
+            Stars world = (Stars) getWorld();
+            world.createBurger();
             world.increaseScore();
         }
         
-        Actor myPumpkin;
-        myPumpkin = getOneObjectAtOffset(0,0, Pumpkin.class);
-        if (myPumpkin != null)
+        if(isTouching(Pumpkin.class))
         {
-            Stars world;
-            world = (Stars)getWorld();
-            world.removeObject(myPumpkin);
+            removeTouching(Pumpkin.class);
+            Stars world = (Stars) getWorld();
+            world.createPumpkin();
             world.increaseScore();
         }
+        
+    
     }
 }
