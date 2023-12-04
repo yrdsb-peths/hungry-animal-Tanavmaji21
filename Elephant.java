@@ -8,10 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Elephant extends Actor
 {
-    /**
-     * Act - do whatever the Elephant wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    GreenfootSound elephantSound = new GreenfootSound("elephantcub.mp3");
+    
     public void act()
     {
         move(3);
@@ -45,6 +43,7 @@ public class Elephant extends Actor
             Stars world = (Stars) getWorld();
             world.createPizza();
             world.increaseScore();
+            elephantSound.play();
         }
         
         if(isTouching(Burger.class))
@@ -53,6 +52,7 @@ public class Elephant extends Actor
             Stars world = (Stars) getWorld();
             world.createBurger();
             world.increaseScore();
+            elephantSound.play();
         }
         
         if(isTouching(Pumpkin.class))
@@ -61,6 +61,7 @@ public class Elephant extends Actor
             Stars world = (Stars) getWorld();
             world.createPumpkin();
             world.increaseScore();
+            elephantSound.play();
         }
         
     
