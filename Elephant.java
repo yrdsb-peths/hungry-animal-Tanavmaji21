@@ -20,14 +20,14 @@ public class Elephant extends Actor
         for(int i = 0; i < idleRight.length; i++)
         {
             idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
-            idleRight[i].scale(75,75);
+            idleRight[i].scale(80,80);
         }
         
         for(int i = 0; i < idleLeft.length; i++)
         {
             idleLeft[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
             idleLeft[i].mirrorHorizontally();
-            idleLeft[i].scale(75,75);
+            idleLeft[i].scale(80,80);
         }
         
         animationTimer.mark();
@@ -86,14 +86,6 @@ public class Elephant extends Actor
             elephantSound.play();
         }
         
-        if(isTouching(Burger.class))
-        {
-            removeTouching(Burger.class);
-            Stars world = (Stars) getWorld();
-            world.createBurger();
-            world.increaseScore();
-            elephantSound.play();
-        }
         
         
     

@@ -10,6 +10,7 @@ public class Stars extends World
 {
     public int score = 0;
     Label scoreLabel;
+    int level = 1;
     /**
      * Constructor for objects of class Stars.
      * 
@@ -26,7 +27,6 @@ public class Stars extends World
         addObject(scoreLabel, 550,30);
         
         createPizza();
-        createBurger();
        
     }
     
@@ -40,24 +40,24 @@ public class Stars extends World
     {
         score++;
         scoreLabel.setValue(score);
+        
+        if(score % 5 == 0)
+        {
+            level += 1;
+        }
     }
     
     public void createPizza()
     {
        Pizza pizza = new Pizza();
+       pizza.setSpeed(level);
        int x = Greenfoot.getRandomNumber(600);
        int y = 0;
        addObject(pizza, x, y);
        
     }
     
-    public void createBurger()
-    {
-        Burger burger = new Burger();
-        int x = Greenfoot.getRandomNumber(600);
-        int y = 0;
-        addObject(burger, x, y);
-    }
+
 
     
     
