@@ -9,30 +9,70 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Elephant extends Actor
 {
     GreenfootSound elephantSound = new GreenfootSound("elephantcub.mp3");
+    GreenfootImage[] idleRight = new GreenfootImage[8];
+    GreenfootImage[] idleLeft = new GreenfootImage[8];
+    
+    String facing = "right";
+    SimpleTimer animationTimer = new SimpleTimer();
+    
+    public Elephant()
+    {
+        for(int i = 0; i < idleRight.length; i++)
+        {
+            idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
+            idleRight[i].scale(75,75);
+        }
+        
+        for(int i = 0; i < idleLeft.length; i++)
+        {
+            idleLeft[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
+            idleLeft[i].mirrorHorizontally();
+            idleLeft[i].scale(75,75);
+        }
+        
+        animationTimer.mark();
+        setImage(idleRight[0]);
+    }
+    
+    int imageIndex = 0;
+    public void animateElephant()
+    {
+        if(animationTimer.millisElapsed() < 100)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
+        
+        if(facing.equals("right"))
+        {
+            setImage(idleRight[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleRight.length;
+        }
+        else
+        {
+            setImage(idleLeft[imageIndex]);
+            imageIndex = (imageIndex + 1) % idleLeft.length;
+        }
+    }
+    
     
     public void act()
     {
-        move(3);
-        
         if (Greenfoot.isKeyDown("left"))
         {
-            turn(-3);
+            move(-2);
+            facing = "left";
         }
         if (Greenfoot.isKeyDown("right"))
         {
-            turn(3);
-        }
-        if (Greenfoot.isKeyDown("up"))
-        {
-            turn(-2);
-        }
-        if (Greenfoot.isKeyDown("down"))
-        {
-            turn(2);
+            move(2);
+            facing = "right";
         }
         
         eat();
         
+        animateElephant();
     }
     
     public void eat()
@@ -55,14 +95,6 @@ public class Elephant extends Actor
             elephantSound.play();
         }
         
-        if(isTouching(Pumpkin.class))
-        {
-            removeTouching(Pumpkin.class);
-            Stars world = (Stars) getWorld();
-            world.createPumpkin();
-            world.increaseScore();
-            elephantSound.play();
-        }
         
     
     }

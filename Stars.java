@@ -20,13 +20,12 @@ public class Stars extends World
         super(600, 400, 1, false);
         
         Elephant tanav = new Elephant();
-        addObject(tanav,50,50);
+        addObject(tanav,300,200);
         
         scoreLabel = new Label(0,70);
         addObject(scoreLabel, 550,30);
         
         createPizza();
-        createPumpkin();
         createBurger();
        
     }
@@ -59,14 +58,7 @@ public class Stars extends World
         int y = 0;
         addObject(burger, x, y);
     }
-    
-    public void createPumpkin()
-    {
-        Pumpkin pumpkin = new Pumpkin();
-        int x = Greenfoot.getRandomNumber(600);
-        int y = 0;
-        addObject(pumpkin, x, y);
-    }
+
     
     
     
