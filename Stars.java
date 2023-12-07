@@ -27,6 +27,8 @@ public class Stars extends World
         addObject(scoreLabel, 550,30);
         
         createPizza();
+        
+        createBurger();
        
     }
     
@@ -57,9 +59,12 @@ public class Stars extends World
        
     }
     
-
-
-    
-    
-    
+    public void createBurger()
+    {
+       Burger burger = new Burger();
+       burger.setSpeed(level);
+       int x = Greenfoot.getRandomNumber(600);
+       int y = 0;
+       addObject(burger, x, y);
+    }
 }
