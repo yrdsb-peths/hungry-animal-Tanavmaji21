@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreen here.
+ * A title screen for the user to know what to click
+ * and what are the basic commands of the game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Tanav Majithia 
+ * @version December 7 2023
  */
 public class TitleScreen extends World
 {
@@ -22,7 +23,13 @@ public class TitleScreen extends World
 
         prepare();
     }
-
+    
+    /**
+     * This method is created to add a starting option for the user.
+     * When the game starts the user should have clicked the space bar
+     * for it to work functionally.
+     * 
+     */
     public void act()
     {
         if(Greenfoot.isKeyDown("space"))
